@@ -16,9 +16,9 @@
 <body>
   <div id='new' class="container">
     <div class="jumbotron">
-      <button v-on:click="backOnClick">back</button><br>
-      <input v-model="title" ><br>
-      <textarea v-model="code" ></textarea><br>
+      <button v-on:click="backOnClick" style="margin-bottom: 10px">back</button><br>
+      <input v-model="title" style="width: 450px" class="form-control"><br>
+      <textarea v-model="code" style="width: 450px; height: 200px; resize: none;"></textarea><br>
       <h3>{{error}}</h3>
       <button v-on:click="saveNoteOnClick">Save note</button>
     </div>

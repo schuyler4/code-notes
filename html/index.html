@@ -13,9 +13,9 @@ integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/
 crossorigin="anonymous">
 </head>
 <body>
-  <div id="index" class="container">
+  <div id="index" class="container" style="width: 600px">
     <div class="jumbotron">
-      <button v-on:click="newOnClick" class="btn btn-secondary">+</button>
+      <button v-on:click="newOnClick" class="btn btn-secondary" style="margin-bottom: 10px">+</button>
       <ul class="list-group">
         <div v-for="(note, index) in notes" />
           <button type="button" v-on:click="noteClicked(index)" class="list-group-item">
@@ -23,15 +23,17 @@ crossorigin="anonymous">
           </button>
         </div>
       </ul>
-      <code v-if="codeToggled && !editing">
-        {{ toggledCode }}
-      </code><br>
-      <textarea v-if="codeToggled && editing" v-model="editInputText">
-      </textarea>
-      <button v-if="codeToggled" v-on:click="editClicked">
+      <pre v-if="codeToggled && !editing" style="white-space: pre-wrap" >
+        <code>
+          {{ toggledCode }}
+        </code>
+      </pre><br>
+      <textarea v-if="codeToggled && editing" v-model="editInputText" style="width: 450px; height: 200px; resize: none;">
+      </textarea><br>
+      <button v-if="codeToggled" v-on:click="editClicked" class="btn btn-secondary">
         {{ editBtnText }}
       </button>
-      <button v-if="codeToggled" v-on:click="deleteClicked">
+      <button v-if="codeToggled" v-on:click="deleteClicked" class="btn btn-secondary">
         Delete
       </button>
     </div>
